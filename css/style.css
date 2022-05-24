@@ -91,3 +91,17 @@ body{
     height: 50px;
     border-radius: 100%;
 }
+.mute-icon i{
+    color: #8EDAFC;
+    background-color: white;
+    border-radius: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin: 0 5px 0 10px;
+}
+.notification-text a{
+    font-size: 13px;
+}
+.notification-text p{
+    font-size: 16px;
+}
