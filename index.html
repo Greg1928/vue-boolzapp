@@ -42,12 +42,16 @@
                         
                     </div>
                     <div class="contacts-container" id="app">
-                        <ul>
+                        <ul id="padding-none">
                             <li v-for="user in contacts">
-                                <div class="user-info">
+                                <div class="user-info d-flex">
                                     <img class="align-self-center" v-bind:src="'img/img/avatar'+user.avatar+'.jpg'" alt="">
-                                    <span>{{user.name}}</span>
+                                    <div class="user-info-text align-self-center">
+                                        <span>{{user.name}}</span>
+                                        <p>Ultimo messaggio inviato</p>
+                                    </div>
                                 </div>
+                                <hr class="margin-none">
                             </li>
                         </ul>
                     </div>

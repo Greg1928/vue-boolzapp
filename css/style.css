@@ -24,6 +24,9 @@ i{
     color: #b1b1b1;
     padding: 0;
 }
+li{
+    list-style-type: none;
+}
 input{
     border-radius: 5px;
 }
@@ -108,7 +111,20 @@ body{
 .user-info{
     height: 60px;
 }
+.user-info:hover{
+    background-color: #F4F5F5;
+    cursor: pointer;
+}
 .user-info img{
     height: 50px;
     border-radius: 100%;
+    margin: 0 10px;
+}
+#padding-none{
+    padding: 0;
+}
+.user-info-text p{
+    color: #b6c8de;
+    font-size: 13px;
+    margin: 0;
 }
