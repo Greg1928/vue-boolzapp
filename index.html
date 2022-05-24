@@ -41,6 +41,16 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                         
                     </div>
+                    <div class="contacts-container" id="app">
+                        <ul>
+                            <li v-for="user in contacts">
+                                <div class="user-info">
+                                    <img class="align-self-center" v-bind:src="'img/img/avatar'+user.avatar+'.jpg'" alt="">
+                                    <span>{{user.name}}</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-8">
                     <div class="header-right header-background">
@@ -71,7 +81,8 @@
         
        
 
-
-
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="js/contacts.js"></script>
     </body>
 </html>
