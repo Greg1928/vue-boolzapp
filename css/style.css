@@ -24,6 +24,10 @@ i{
     color: #b1b1b1;
     padding: 0;
 }
+.color-line{
+    color: #b6c8de;
+}
+
 li{
     list-style-type: none;
 }
@@ -62,6 +66,7 @@ body{
 .chat-container{
     background-image: url("../img/img/mine.jpg");
     height: calc(100vh - 180px);;
+    overflow-y: scroll;
 }
 .input-search{
     height: 40px;
@@ -86,13 +91,14 @@ body{
 .full-height{
     height: 60px;
 }
-.header-left i{
+.header-left i, .header-right i{
     font-size: 20px;
     margin: 0 10px;
 }
-.header-left img{
+.header-left img, .current-user img{
     height: 50px;
     border-radius: 100%;
+    margin: 0 10px;
 }
 .mute-icon i{
     color: #8EDAFC;
@@ -108,8 +114,12 @@ body{
 .notification-text p{
     font-size: 16px;
 }
+.contacts-container{
+    height: calc(100vh - 220px);
+    overflow-y: scroll;
+}
 .user-info{
-    height: 60px;
+    height: 80px;
 }
 .user-info:hover{
     background-color: #F4F5F5;
@@ -118,7 +128,7 @@ body{
 .user-info img{
     height: 50px;
     border-radius: 100%;
-    margin: 0 10px;
+    margin: 0 20px;
 }
 #padding-none{
     padding: 0;
@@ -127,4 +137,7 @@ body{
     color: #b6c8de;
     font-size: 13px;
     margin: 0;
+}
+.icons-right{
+    margin-right: 30px;
 }
