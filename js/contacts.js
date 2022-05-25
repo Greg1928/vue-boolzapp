@@ -1,3 +1,4 @@
+
 const app = new Vue({
     el: "#app",
     data: {
@@ -166,25 +167,21 @@ const app = new Vue({
             }
         ]
 },
-// methods:{
-//     currentMex(i){
-//         for(let y = 0; y<this.contacts[i].messages.length; y++){
-//             if(this.contacts[i].messages[y] === "sent"){
-                
-//             }
-
-
-            
-        
-        
-        
-//     }
-// }
-// }
 methods:{
     currentMex(i){
         this.index = i;
-    }
+    },
+    lastMessage(i){
+        let length = this.contacts[i].messages.length -1;
+        return length
+    },
+    // dateHalf(i){
+    //     let date = this.contacts[i].messages;
+    //     let dateSplit = date.split(' ');
+    //     return dateSplit[0];
+    // }
+ }
 }
-}
-);
+
+)
+

@@ -53,6 +53,7 @@ body{
     margin: 30px auto 0 auto;
     background-color: white;
     height: calc(100vh - 60px);
+    font-family: 'Lato', sans-serif;
 }
 .header-left, .header-right, .message-input-block, .notification-block{
     height: 60px;
