@@ -1,6 +1,7 @@
 const app = new Vue({
     el: "#app",
     data: {
+        index: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -164,6 +165,26 @@ const app = new Vue({
                 ],
             }
         ]
+},
+// methods:{
+//     currentMex(i){
+//         for(let y = 0; y<this.contacts[i].messages.length; y++){
+//             if(this.contacts[i].messages[y] === "sent"){
+                
+//             }
+
+
+            
+        
+        
+        
+//     }
+// }
+// }
+methods:{
+    currentMex(i){
+        this.index = i;
+    }
 }
 }
 );
