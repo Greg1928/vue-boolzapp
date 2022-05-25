@@ -10,93 +10,105 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- FontAwesom -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     </head>
     <body>
-       
-        <div class="main-container">
-            <div class="row d-flex gx-0">
-                <div class="col-4">
-                    <div class="header-left border-header header-background d-flex justify-content-between">
-                        <div class="user d-flex ali">
-                            <img class="align-self-center" src="img/img/avatar_io.jpg" alt="">
-                            <p class="align-self-center margin-none">Sofia</p>
+        <!-- <div id="app"> -->
+            <!-- MAIN CONTAINER -->
+            <div class="main-container">
+
+                <!-- MAIN ROW -->
+                <div class="row gx-0">
+
+                    <!-- LEFT COLUMN CONTAINER -->
+                    <div class="col-4">
+                        <!-- header left -->
+                        <div class="header-left border-header header-background d-flex justify-content-between">
+                            <div class="user d-flex ali">
+                                <img class="align-self-center" src="img/img/avatar_io.jpg" alt="">
+                                <p class="align-self-center margin-none">Sofia</p>
+                            </div>
+                            <div class="icons-left align-self-center">
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
                         </div>
-                        <div class="icons-left align-self-center">
-                            <i class="fa-solid fa-circle-notch"></i>
-                            <i class="fa-solid fa-message"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <!-- notification -->
+                        <div class="notification-block notification-background d-flex">
+                            <div class="mute-icon align-self-center">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div class="notification-text align-self-center"">
+                                <p class="margin-none">Ricevi motifiche di nuovi messaggi</p>
+                                <a class="margin-none">attiva notifiche desktop</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="notification-block notification-background d-flex">
-                        <div class="mute-icon align-self-center">
-                            <i class="fa-solid fa-bell-slash"></i>
-                        </div>
-                        <div class="notification-text align-self-center"">
-                            <p class="margin-none">Ricevi motifiche di nuovi messaggi</p>
-                            <a class="margin-none">attiva notifiche desktop</a>
-                        </div>
-                    </div>
-                    <div class="input-search input-search-background">
-                       
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <!-- search contacts input -->
+                        <div class="input-search input-search-background">
                         
-                    </div>
-                    <div class="contacts-container" id="app">
-                        <ul id="padding-none">
-                            <li v-for="user in contacts">
-                                <div class="user-info d-flex">
-                                    <img class="align-self-center" v-bind:src="'img/img/avatar'+user.avatar+'.jpg'" alt="">
-                                    <div class="user-info-text align-self-center">
-                                        <span>{{user.name}}</span>
-                                        <p>Ultimo messaggio inviato</p>
-                                    </div>
-                                </div>
-                                <hr class="margin-none color-line">
-                            </li>
-                        </ul>
-                    </div>
-                
-                </div>
-                <div class="col-8">
-                    <div class="header-right header-background d-flex justify-content-between">
-                        <div class="current-user d-flex ali">
-                            <img class="align-self-center" src="img/img/avatar_io.jpg" alt="">
-                            <p class="align-self-center margin-none">Michele</p>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
                             
                         </div>
-                        <div class="icons-right align-self-center">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <i class="fa-solid fa-paperclip"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <!-- contacts container -->
+                        <div class="contacts-container" id="app">
+                            <ul id="padding-none">
+                                <li v-for="user in contacts">
+                                    <div class="user-info d-flex">
+                                        <img class="align-self-center" v-bind:src="'img/img/avatar'+user.avatar+'.jpg'" alt="">
+                                        <div class="user-info-text align-self-center">
+                                            <span>{{user.name}}</span>
+                                            <p>Ultimo messaggio inviato</p>
+                                        </div>
+                                    </div>
+                                    <hr class="margin-none color-line">
+                                </li>
+                            </ul>
                         </div>
+                    
                     </div>
-                    <div class="chat-container">
 
-                    </div>
-                    <div class="message-input-block message-input-background">
-                        <div class="row d-flex align-items-center full-height">
-                            <div class="col-1 d-flex justify-content-end">
-                                <i class="fa-regular fa-face-smile"></i>
+                    <!-- RIGHT COLUMN CONTAINER -->
+                    <div class="col-8">
+                        <!-- header right -->
+                        <div class="header-right header-background d-flex justify-content-between">
+                            <div class="current-user d-flex ali">
+                                <img class="align-self-center" src="img/img/avatar_io.jpg" alt="">
+                                <p class="align-self-center margin-none">Michele</p>
+                                
                             </div>
-                            <div class="col-10">
-                                <input type="text" placeholder="Scrivi un messaggio">
-                            </div>
-                            <div class="col-1 d-flex justify-content-start"">
-                                <i class="fa-solid fa-microphone"></i>
+                            <div class="icons-right align-self-center">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-    
-                        
-                
+                        <!-- chat block -->
+                        <div class="chat-container">
+
+                        </div>
+                        <!-- type message block -->
+                        <div class="message-input-block message-input-background">
+                            <div class="row d-flex align-items-center full-height">
+                                <div class="col-1 d-flex justify-content-end">
+                                    <i class="fa-regular fa-face-smile"></i>
+                                </div>
+                                <div class="col-10">
+                                    <input type="text" placeholder="Scrivi un messaggio">
+                                </div>
+                                <div class="col-1 d-flex justify-content-start"">
+                                    <i class="fa-solid fa-microphone"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
+                
             </div>
-        </div>
-        
+        <!-- </div> -->
        
 
-        
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script src="js/contacts.js"></script>
     </body>
 </html>
