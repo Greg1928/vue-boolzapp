@@ -57,7 +57,7 @@
                         <div class="contacts-container">
                             <ul id="padding-none">
                                 <li v-for="(user, i) in contacts">
-                                    <div class="user-info d-flex" @click="currentMex(i)">
+                                    <div class="user-info d-flex" @click="currentMex(i)" :class="{selectedContact : index===i}">
                                         <img class="align-self-center" v-bind:src="'img/img/avatar'+user.avatar+'.jpg'" alt="">
                                         <div class="user-info-text align-self-center">
                                             <span>{{user.name}}</span>
@@ -96,6 +96,7 @@
                             <div class="main-chat">
                                 <div class="message-box" v-for="(mex, a) in contacts[index].messages" :class="{messageSent : contacts[index].messages[a].status === 'sent'}">
                                     <p class="margin-none">{{contacts[index].messages[a].message}}</p>
+                                    <small>{{contacts[index].messages[a].date}}</small>
                                 </div>
                             </div>
                         </div>
