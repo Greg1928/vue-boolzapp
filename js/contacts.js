@@ -175,11 +175,18 @@ methods:{
         let length = this.contacts[i].messages.length -1;
         return length
     },
-    // dateHalf(i){
-    //     let date = this.contacts[i].messages;
-    //     let dateSplit = date.split(' ');
-    //     return dateSplit[0];
-    // }
+    dateHalf(user){
+        const full = user.messages[user.messages.length-1].date;
+        const half = full.split(" ");
+        return half[0];
+    },
+    hourHalf(index, a){
+        const DateTime = luxon.DateTime;
+        const full = this.contacts[index].messages[a].date;
+        const half = full.split(" ");
+        return DateTime.fromFormat(half[1], "hh:mm:ss").toFormat("HH:mm")
+        
+    }
  }
 }
 
