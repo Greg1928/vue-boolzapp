@@ -205,8 +205,22 @@ methods:{
            this.messageInput = "";
          }
     },
+    randomAnswer(){
+        let x = ["Sì, certamente.", "E come non ammetterlo?","Molto bene","Per quel che mi riguarda non mi sembra affatto che tu sbagli.", "Tutto questo a me pare che sia assurdo!", "Pressappoco.", "Tu dici bene: bisogna fare così.","Assolutamente.", "Ebbene?", "E che cos'altro potremmo dire?", "È vero.", "Sicuro!"];
+        return x[Math.floor(Math.random() * 11)];
+    },
+    answer(index){
+        setTimeout(() =>{
+            const DateTime = luxon.DateTime;
+            let answerMex = {
+                date: DateTime.now().toFormat("dd:MM:yyyy HH:mm:ss"),
+                message: this.randomAnswer(),
+                status: 'received'
+            }
+            this.contacts[index].messages.push(answerMex);
+         }, 1000);
+    }
  }
 }
 
 )
-
