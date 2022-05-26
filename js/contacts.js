@@ -186,6 +186,11 @@ methods:{
         const half = full.split(" ");
         return DateTime.fromFormat(half[1], "hh:mm:ss").toFormat("HH:mm")
         
+    },
+    lastAccess(index){
+        let date = this.contacts[index].messages[0].date;
+        const half = date.split(" ");
+        return half[0];
     }
  }
 }
