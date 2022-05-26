@@ -189,15 +189,18 @@ methods:{
         
     },
     lastAccess(index){
-        let date = this.contacts[index].messages[0].date;
+        const DateTime = luxon.DateTime;
+        len = this.contacts[index].messages.length;
+        let date = this.contacts[index].messages[len-1].date;
         const half = date.split(" ");
-        return half[0];
+        return DateTime.fromFormat(half[1], "hh:mm:ss").toFormat("HH:mm")
+        
     },
     sendMessage(index){
         const DateTime = luxon.DateTime;
         if(this.messageInput !== ' '){
            let messageInput = {
-               date: DateTime.now().toFormat("dd:MM:yyyy HH:mm:ss"),
+               date: DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss"),
                message: this.messageInput,
                status: 'sent'
            };
@@ -213,7 +216,7 @@ methods:{
         setTimeout(() =>{
             const DateTime = luxon.DateTime;
             let answerMex = {
-                date: DateTime.now().toFormat("dd:MM:yyyy HH:mm:ss"),
+                date: DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss"),
                 message: this.randomAnswer(),
                 status: 'received'
             }
