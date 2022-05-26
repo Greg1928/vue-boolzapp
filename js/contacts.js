@@ -165,7 +165,8 @@ const app = new Vue({
                     }
                 ],
             }
-        ]
+        ],
+        messageInput: "",
 },
 methods:{
     currentMex(i){
@@ -191,7 +192,19 @@ methods:{
         let date = this.contacts[index].messages[0].date;
         const half = date.split(" ");
         return half[0];
-    }
+    },
+    sendMessage(index){
+        const DateTime = luxon.DateTime;
+        if(this.messageInput !== ' '){
+           let messageInput = {
+               date: DateTime.now().toFormat("dd:MM:yyyy HH:mm:ss"),
+               message: this.messageInput,
+               status: 'sent'
+           };
+           this.contacts[index].messages.push(messageInput);
+           this.messageInput = "";
+         }
+    },
  }
 }
 
