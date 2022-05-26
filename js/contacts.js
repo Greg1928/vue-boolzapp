@@ -207,7 +207,7 @@ methods:{
     },
     randomAnswer(){
         let x = ["Sì, certamente.", "E come non ammetterlo?","Molto bene","Per quel che mi riguarda non mi sembra affatto che tu sbagli.", "Tutto questo a me pare che sia assurdo!", "Pressappoco.", "Tu dici bene: bisogna fare così.","Assolutamente.", "Ebbene?", "E che cos'altro potremmo dire?", "È vero.", "Sicuro!"];
-        return x[Math.floor(Math.random() * 11)];
+        return x[Math.floor(Math.random() * 11) + 0];
     },
     answer(index){
         setTimeout(() =>{
