@@ -14,7 +14,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js"></script>
+        
     </head>
     <body>
         <div id="app">
@@ -51,13 +52,13 @@
                         <!-- search contacts input -->
                         <div class="input-search input-search-background">
                         
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput" v-on:keyup="filterContacts()">
                             
                         </div>
                         <!-- contacts container -->
                         <div class="contacts-container">
                             <ul id="padding-none">
-                                <li v-for="(user, i) in contacts">
+                                <li v-for="(user, i) in contacts" v-show="user.visible">
                                     <div class="user-info d-flex" @click="currentMex(i)" :class="{selectedContact : index===i}">
                                         <img class="align-self-center" v-bind:src="'img/img/avatar'+user.avatar+'.jpg'" alt="">
                                         <div class="user-info-text align-self-center">

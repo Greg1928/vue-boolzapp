@@ -167,6 +167,7 @@ const app = new Vue({
             }
         ],
         messageInput: "",
+        searchInput: "",
 },
 methods:{
     currentMex(i){
@@ -222,8 +223,21 @@ methods:{
             }
             this.contacts[index].messages.push(answerMex);
          }, 1000);
-    }
- }
-}
+    },
+    filterContacts(){ 
+        for(let i = 0; i<this.contacts.length; i++)
+            if(this.contacts[i].name.toLowerCase().includes(this.searchInput.toLowerCase())){
+                this.contacts[i].visible = true;
+        }else{
+            this.contacts[i].visible = false;
+        }
 
+    }
+  
+ }
+
+
+
+}
 )
+
