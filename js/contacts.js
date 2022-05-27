@@ -197,6 +197,12 @@ methods:{
         return DateTime.fromFormat(half[1], "hh:mm:ss").toFormat("HH:mm")
         
     },
+    lastAccessDate(index){
+        len = this.contacts[index].messages.length;
+        let date = this.contacts[index].messages[len-1].date;
+        const half = date.split(" ");
+        return half[0];
+    },
     sendMessage(index){
         const DateTime = luxon.DateTime;
         if(this.messageInput !== ' '){
@@ -232,10 +238,8 @@ methods:{
             this.contacts[i].visible = false;
         }
 
-    }
-  
- }
-
+    },
+}
 
 
 }

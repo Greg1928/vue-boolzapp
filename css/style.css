@@ -70,13 +70,13 @@ body{
 .input-search{
     height: 40px;
     display: flex;
-    justify-content: center;
+    padding: 0 5px;
+    gap: 1px;
 }
 .input-search input{
     border: none;
-    text-align: center;
     margin: auto 0;
-    min-width: 500px;
+    width: 80%;
 }
 .message-input-block input{
     width: 100%;
@@ -172,7 +172,20 @@ body{
 }
 .message-box p{
     padding: 10px 10px 0 10px;
+    display: flex;
+    justify-content: space-between;
 }
 .selectedContact{
     background-color:  #F4F5F5;
+}
+.message-box i{
+    cursor: pointer;
+}
+.search-icon{
+    height: 24px;
+    background-color: white;
+    box-shadow: lightgray;
+    margin: auto 0;
+    width: 20%;
+    text-align: center;
 }

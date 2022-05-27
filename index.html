@@ -51,8 +51,8 @@
                         </div>
                         <!-- search contacts input -->
                         <div class="input-search input-search-background">
-                        
-                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput" v-on:keyup="filterContacts()">
+                            <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <input type="text" placeholder=" Cerca o inizia una nuova chat" v-model="searchInput" v-on:keyup="filterContacts()">
                             
                         </div>
                         <!-- contacts container -->
@@ -84,7 +84,7 @@
                                 <img class="align-self-center" :src="'img/img/avatar'+contacts[index].avatar+'.jpg'" alt="">
                                 <div class="user-info-text align-self-center">
                                     <span class="align-self-center margin-none">{{contacts[index].name}}</span>
-                                    <p>{{'Ultimo accesso alle ore ' + lastAccess(index)}}</p>
+                                    <p>{{'Ultimo accesso il ' + lastAccessDate(index) + ' alle ore ' + lastAccess(index)}}</p>
                                 </div>
                             </div>
                             <div class="icons-right align-self-center">
@@ -97,7 +97,7 @@
                         <div class="chat-container">
                             <div class="main-chat">
                                 <div class="message-box" v-for="(mex, a) in contacts[index].messages" :class="{messageSent : contacts[index].messages[a].status === 'sent'}">
-                                    <p class="margin-none">{{contacts[index].messages[a].message}}</p>
+                                    <p class="margin-none">{{contacts[index].messages[a].message}} <i class="fa-solid fa-chevron-down" id="chevron"></i></p>
                                     <small>{{hourHalf(index, a)}}</small>
                                 </div>
                             </div>
